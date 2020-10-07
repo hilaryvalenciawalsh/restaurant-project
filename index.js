@@ -17,6 +17,7 @@
 // Dependencies
 // =============================================================
 var express = require("express");
+const { get } = require("http");
 var path = require("path");
 
 // Sets up the Express App
@@ -31,21 +32,21 @@ app.use(express.json());
 //Table Arrays
 // =============================================================
 var tableArr = [
-  {
-    name: "yoda",
-    phone: "Yoda",
-    email: "Jedi Master",
-    uniqueId: 900,
-  },
+//   {
+//     name: ,
+//     phone: "Yoda",
+//     email: "Jedi Master",
+//     uniqueId: 900,
+//   },
 ];
 
 var waitListArr = [
-  {
-    name: "Anakin",
-    phone: "Yoda",
-    email: "Jedi Master",
-    uniqueId: 900,
-  },
+//   {
+//     name: "Anakin",
+//     phone: "Yoda",
+//     email: "Jedi Master",
+//     uniqueId: 900,
+//   },
 ];
 
 // Routes
@@ -79,6 +80,20 @@ app.post("/reserve", function (req, res) {
   }
   res.json(newTableObj);
 });
+
+app.get("/api/tables", function (req, res) {
+    res.json(tableArr)
+})
+
+app.get("/api/waitList", function (req, res) {
+    res.json(waitListArr)
+})
+
+app.get("/api/clear", function (req, res) {
+    tableArr = []
+    waitListArr = []
+    res.send("DELETED!!!")
+})
 
 // Starts the server to begin listening
 // =============================================================

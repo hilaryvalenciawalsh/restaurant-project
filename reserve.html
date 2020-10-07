@@ -79,13 +79,14 @@
           name: $("#name").val().trim(),
           phone: $("#phone").val().trim(),
           email: $("#email").val().trim(),
-          uniqueId: $("#funiqueId").val().trim(),
+          uniqueId: $("#uniqueId").val().trim(),
         };
       // Question: What does this code do??
       $.post("/reserve", newReservation)
         .then(function(data) {
           console.log("add.html", data);
-          alert("Adding reservation...");
+          alert("Adding reservation...")
+          window.location.href='/tables';
         });
       });
     </script>
