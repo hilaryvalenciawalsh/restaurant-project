@@ -21,7 +21,7 @@
         <h1>copyPasta co</h1>
         <h3>est. 2020 - Come get your face in some pasta!</h3>
         <hr />
-        <a href="tables.html"
+        <a href="/tables"
           ><button class="btn btn-danger btn-lg">
             <span class="fa fa-eye"></span> View Tables
           </button></a
@@ -79,13 +79,14 @@
           name: $("#name").val().trim(),
           phone: $("#phone").val().trim(),
           email: $("#email").val().trim(),
-          uniqueId: $("#funiqueId").val().trim(),
+          uniqueId: $("#uniqueId").val().trim(),
         };
       // Question: What does this code do??
       $.post("/reserve", newReservation)
         .then(function(data) {
           console.log("add.html", data);
-          alert("Adding reservation...");
+          alert("Adding reservation...")
+          window.location.href='/tables';
         });
       });
     </script>

@@ -27,12 +27,12 @@
         <br />
 
         <div class="text-center">
-          <a href="reserve.html"
+          <a href="/reserve"
             ><button class="btn btn-lg btn-danger">
               <span class="fa fa-credit-card"></span> Make Reservation
             </button></a
           >
-          <a href="home.html"
+          <a href="/"
             ><button class="btn btn-lg btn-default">
               <span class="fa fa-home"></span></button
           ></a>
@@ -104,10 +104,10 @@
           listItem.append(
             $("<h2>").text("Table #" + (i + 1)),
             $("<hr>"),
-            $("<h2>").text("ID: " + tableData[i].customerID),
-            $("<h2>").text("Name: " + tableData[i].customerName),
-            $("<h2>").text("Email: " + tableData[i].customerEmail),
-            $("<h2>").text("Phone: " + tableData[i].phoneNumber)
+            $("<h2>").text("ID: " + tableData[i].uniqueId),
+            $("<h2>").text("Name: " + tableData[i].name),
+            $("<h2>").text("Email: " + tableData[i].email),
+            $("<h2>").text("Phone: " + tableData[i].phone)
           );
 
           tableList.append(listItem);
@@ -138,10 +138,10 @@
           listItem.append(
             $("<h2>").text("Table #" + (i + 1)),
             $("<hr>"),
-            $("<h2>").text("ID: " + waitData[i].customerID),
-            $("<h2>").text("Name: " + waitData[i].customerName),
-            $("<h2>").text("Email: " + waitData[i].customerEmail),
-            $("<h2>").text("Phone: " + waitData[i].phoneNumber)
+            $("<h2>").text("ID: " + waitData[i].uniqueId),
+            $("<h2>").text("Name: " + waitData[i].name),
+            $("<h2>").text("Email: " + waitData[i].email),
+            $("<h2>").text("Phone: " + waitData[i].phone)
           );
 
           waitList.append(listItem);
@@ -156,7 +156,7 @@
       // Clear the tables on the server and then empty the elements on the client
       $.ajax({
         url: "/api/clear",
-        method: "POST",
+        method: "get",
       }).then(function () {
         $("#waitList").empty();
         $("#tableList").empty();
