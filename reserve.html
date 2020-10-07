@@ -81,9 +81,9 @@
           email: $("#email").val().trim(),
           uniqueId: $("#funiqueId").val().trim(),
         };
-
-        // Question: What does this code do??
-        $.post("/reservation", newReservation).then(function (data) {
+      // Question: What does this code do??
+      $.post("/reserve", newReservation)
+        .then(function(data) {
           console.log("add.html", data);
           alert("Adding reservation...");
         });

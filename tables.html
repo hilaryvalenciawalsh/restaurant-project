@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -93,6 +94,7 @@
 
         // Loop through and display each of the customers
         for (var i = 0; i < tableData.length; i++) {
+
           // Get a reference to the tableList element and populate it with tables
           var tableList = $("#tableList");
 
@@ -119,12 +121,14 @@
         url: "/api/waitlist",
         method: "GET",
       }).then(function (waitData) {
+
         // Here we then log the waitlistData to console, where it will show up as an object.
         console.log(waitData);
         console.log("------------------------------------");
 
         // Loop through and display each of the customers
         for (var i = 0; i < waitData.length; i++) {
+
           // Get a reference to the waitList element and populate it with tables
           var waitList = $("#waitList");
 
